@@ -1,0 +1,43 @@
+{
+  "Item": [
+    {
+      "ItemID": 1,
+      "Name": "Sandwich",
+      "Price": 35
+    },
+    {
+      "ItemID": 2,
+      "Name": "Pizza",
+      "Price": 140
+    },
+    {
+      "ItemID": 3,
+      "Name": "Burger",
+      "Price": 75
+    },
+    {
+      "ItemID": 4,
+      "Name": "Pav Bhaji",
+      "Price": 100
+    }
+  ],
+  "Customer": [
+    {
+      "CustomerID": 1,
+      "Name": "xyz"
+    },
+    {
+      "CustomerID": 2,
+      "Name": "abc"
+    },
+    {
+      "CustomerID": 3,
+      "Name": "xaasdasd"
+    },
+    {
+      "CustomerID": 4,
+      "Name": "asdasda"
+    }
+  ],
+  "Order": []
+}
