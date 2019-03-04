@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   }
 
   validateConfirmPassword(){
-    if(this.customerModel.password!=this.confirmPassword)
+    if(this.customerModel.password!=this.confirmPasswordVar)
       this.isPasswordMatch=false;
   }
 
