@@ -16,4 +16,12 @@ export class CustomerService {
    getCustomer(id){
     return this.http.get(environment.apiURL+'/Customer/'+id).toPromise();
    }
+
+   addCustomer(customerModel){
+    return this.http.post(environment.apiURL+'/Customer', customerModel).toPromise();
+   }
+
+   validateUserName(username){
+    return this.http.get(environment.apiURL+'/Customer?userName='+username).toPromise();
+   }
 }

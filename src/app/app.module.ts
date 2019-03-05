@@ -16,6 +16,11 @@ import { OrderItemsComponent } from './orders/order-items/order-items.component'
 import { OrderService } from './shared/order.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { TokenService } from './shared/token.service';
+import { AuthService } from './shared/auth.service';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './shared/route-guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,9 @@ import { RegisterComponent } from './register/register.component';
     OrderComponent,
     OrderItemsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,7 @@ import { RegisterComponent } from './register/register.component';
     ToastrModule.forRoot()
   ],
   entryComponents:[OrderItemsComponent],
-  providers: [OrderService],
+  providers: [OrderService, TokenService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 ﻿<h2>Register</h2>
-<form #userForm="ngForm">
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="firstName">First Name</label>
         <input type="text" #firstName="ngModel" required [class.is-invalid]="firstName.invalid && firstName.touched" class="form-control" name="firstName" [(ngModel)]="customerModel.firstName" />
@@ -24,11 +24,11 @@
     <div class="form-group">
         <label for="password">Password</label>
         <input type="password" #password="ngModel" required class="form-control" name="password" [class.is-invalid]="password.invalid && password.touched" [(ngModel)]="customerModel.password"/>
-        <div *ngIf="password.touched" class="invalid-feedback">
+        <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
             <div [class.d-none]="password.valid || password.untouched">Password is required & must be at least 6 characters</div>
         </div>
     </div>
-    <div class="form-group">{{isPasswordMatch}}
+    <div class="form-group">
         <label for="confirmPassword">Confirm Password</label>
         <input type="password" (change)="validateConfirmPassword()" #confirmPassword="ngModel" required class="form-control" name="confirmPassword" [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched" [(ngModel)]="confirmPasswordVar"/>
         <div *ngIf="confirmPassword.touched && confirmPassword.valid" class="invalid-feedback">
