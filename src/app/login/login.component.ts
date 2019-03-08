@@ -14,7 +14,6 @@ import { TokenService } from '../shared/token.service';
 export class LoginComponent implements OnInit {
 
   loginModel = new LoginModel('', '');
-  isLoggedin=false;
   constructor(private authService: AuthService,
     private toastr: ToastrService,
     private tokenSevice: TokenService,
@@ -30,9 +29,8 @@ export class LoginComponent implements OnInit {
       
       if (res[0]) {
         this.toastr.success("Login Succesfull", "Food Zone");
-        this.tokenSevice.setToken(true,"ïsLoggedIn");
         this.authService.setAuthToken(res[0]);
-        this.router.navigate['/home'];
+        this.router.navigate(['home']);
       }
       else{
         this.toastr.warning("Invalid username or password", "Food Zone");

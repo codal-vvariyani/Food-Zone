@@ -23,7 +23,7 @@ export class OrderItemsComponent implements OnInit {
     private orderSevice: OrderService) { }
 
   ngOnInit() {
-    this.itemService.getItemList().then(res => this.itemList = res as Item[]);
+    this.itemService.getItemList().subscribe(res => this.itemList = res as Item[]);
     if (this.data.orderItemIndex == null)
       this.formData = {
         OrderItemID: null,

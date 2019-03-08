@@ -19,10 +19,15 @@ export class AuthService {
 
   setAuthToken(res){
     this.tokenService.useLocalStorage();
-    this.tokenService.setToken(res, this.authTokenKey);
+    return this.tokenService.setToken(res, this.authTokenKey);
+  }
+
+  getAuthToken(){
+    this.tokenService.useLocalStorage();
+    return this.tokenService.getToken(this.authTokenKey);
   }
 
   removeAuthToken(){
-    this.tokenService.removeToken(this.authTokenKey);
+    return this.tokenService.removeToken(this.authTokenKey);
   }
 }
